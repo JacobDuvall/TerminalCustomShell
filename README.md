@@ -40,5 +40,7 @@ sprintf(): https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.
 
 Bugs/Assumptions: 
 
-./oucat assumes that control+C is required to exit the loop when ./oucat is run with no arguments
+oucat.c assumes that control+C is required to exit the loop when ./oucat is run with no arguments
+
+outail.c and ouhead.c assume that no N also means no -n (i.e. ./ouhead Makefile rather than ./ouhead -n Makefile) 
 
