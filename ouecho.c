@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// program that echos the input
 int main(int argc, const char * argv[]) {
 
     // if no arguments
@@ -23,6 +24,7 @@ int main(int argc, const char * argv[]) {
         return EXIT_SUCCESS;
     }
     else {
+        fprintf(stderr, "error\n");
         return EXIT_FAILURE;
     }
     return EXIT_FAILURE;

@@ -3,19 +3,24 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+// program used to print contents of the file or the string passed in
+
 int main(int argc, const char * argv[]) {
     
     char* usage = "usage: oucat <files>"; // usage statement
     FILE *file; // file collected from stdin
     int printies; // print from file
     
+    // if no arguments passed
     if (!argv[1]) {
         if (stdin == NULL) {
+            // prints until EOF
             while ((printies = fgetc(stdin)) != EOF)
             {
                 fprintf(stdout, "%c", printies);
             }
         }
+        // prints from stdin until EOF
         for (char x = getc(stdin); x != EOF; x = getc(stdin)) {
             fprintf(stdout, "%c", x);
             }
@@ -41,6 +46,7 @@ int main(int argc, const char * argv[]) {
             }
                 // else file does exist print file contents
                 else {
+                    // prints from file until EOF
                     while ((printies = fgetc(file)) != EOF)
                     {
                         fprintf(stdout, "%c", printies);
@@ -50,7 +56,8 @@ int main(int argc, const char * argv[]) {
             }
         return EXIT_SUCCESS;
         }
-
+    
+    fprintf(stderr, "%s\n", usage);
     return EXIT_FAILURE;
 }
 

@@ -2,21 +2,32 @@
 #include <string.h>
 #include <stdlib.h>
 
+// program to read n lines from the file passed
 int main(int argc, const char * argv[]) {
     
     FILE *file; // file collected from stdin
-    char *usage = "usage: ouhead [-n N] <file>";
-    int lines = 0;
-    char x;
-    int N = 10;
+    char *usage = "usage: ouhead [-n N] <file>"; // usage statement
+    int lines = 0; // line counter
+    char x; // stores the file contents
+    int N = 10; // number of lines to read
+    
+    if (argc == 1) {
+        fprintf(stderr, "%s\n", usage);
+        return EXIT_FAILURE;
+    }
 
+    // if only one argument
     if(argc == 2) {
+        // open file for reading
         file = fopen(argv[1], "r");
+        // if no file
         if (file == NULL) {
             fprintf(stderr, "File does not exist");
             return EXIT_FAILURE;
         }
+        // if file opens
         else {
+            // while file characters are not EOF
             for (x = getc(file); x != EOF; x = getc(file)) {
                 if(lines != N) {
                     fprintf(stdout, "%c", x);
@@ -29,14 +40,20 @@ int main(int argc, const char * argv[]) {
             return EXIT_SUCCESS;
         }
     }
+    
+    // if -n and a file is passed
     else if (!strcmp(argv[1], "-n") && argv[3]) {
         N = atoi(argv[2]);
+        // open file for reading
         file = fopen(argv[3], "r");
+        // if no file
         if (file == NULL) {
             fprintf(stderr, "File does not exist");
             return EXIT_FAILURE;
         }
+        // if file
         else {
+            // while file is not EOF
             for (x = getc(file); x != EOF; x = getc(file)) {
                 if(lines != N) {
                     fprintf(stdout, "%c", x);
@@ -49,14 +66,16 @@ int main(int argc, const char * argv[]) {
             return EXIT_SUCCESS;
         }
     }
+    
+    // if -n only
     else if (!strcmp(argv[1], "-n")) {
         N = atoi(argv[2]);
-        //file = stdin;
-        //file = fopen(argv[3], "r");
+        // if stdin is NULL
         if (stdin == NULL) {
             fprintf(stderr, "File does not exist");
             return EXIT_FAILURE;
         }
+        // if stdin is not NULL
         else {
             for (x = getc(stdin); x != EOF; x = getc(stdin)) {
                 if(lines != N) {
@@ -76,6 +95,8 @@ int main(int argc, const char * argv[]) {
         fprintf(stdout,"%s\n", usage);
         return EXIT_SUCCESS;
     }
+    
+    
     
     
     return 0;

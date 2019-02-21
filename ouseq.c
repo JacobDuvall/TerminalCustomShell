@@ -3,11 +3,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+// program to print numbers in increasing, decreasing, or equal order
 int main(int argc, const char * argv[]) {
     
-    int number1 = 0;
-    int number2 = 0;
-    char *usage = "usage: ouseq [M] N";
+    int number1 = 0; // number holder one
+    int number2 = 0; // number holder two
+    char *usage = "usage: ouseq [M] N"; // usage statement
     
     // print usage statement
     if (!strcmp(argv[1], "-h")) {
@@ -15,18 +16,21 @@ int main(int argc, const char * argv[]) {
         return EXIT_SUCCESS;
     }
     
+    // if no numbers
     if(!argv[1]) {
-        fprintf(stderr, "no numbers entered\n");
         return EXIT_FAILURE;
     }
     
+    // if argv[1] exist assign to number1
     if(argv[1]) {
         number1 = atoi(argv[1]);
     }
+    // if argv[2] exist assign to number2
     if(argv[2]) {
         number2 = atoi(argv[2]);
     }
     
+    // if no number 2 print from 0 to number1
     if(!argv[2]) {
         for(int i = 0; i <= number1; i++) {
             fprintf(stdout, "%d\n", i);
@@ -34,6 +38,7 @@ int main(int argc, const char * argv[]) {
         return EXIT_SUCCESS;
     }
     
+    // if number1 less than number2 print from number1 to number2
     else if(number1 < number2) {
         for(int i = number1; i <= number2; i++) {
             fprintf(stdout, "%d\n", i);
@@ -41,6 +46,7 @@ int main(int argc, const char * argv[]) {
         return EXIT_SUCCESS;
     }
     
+    // if number1 greater than number2 print from number1 to number2
     else if(number1 > number2) {
         for(int i = number1; i >= number2; i--) {
             fprintf(stdout, "%d\n", i);
@@ -48,12 +54,14 @@ int main(int argc, const char * argv[]) {
         return EXIT_SUCCESS;
     }
     
+    // if number1 equals number2 print number1
     else if(number1 == number2) {
         fprintf(stdout,"%d\n", number1);
         return EXIT_SUCCESS;
     }
     
-    fprintf(stderr, "an error has occured\n");
+    // error
+    fprintf(stderr, "%s\n", usage);
     return EXIT_FAILURE;
 
 }
