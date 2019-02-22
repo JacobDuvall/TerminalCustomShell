@@ -1,10 +1,26 @@
+/* AUTHOR: JACOB DUVALL
+ *
+ * DATE: 2/21/19
+ *
+ * PROGRAM: oucat.c
+ *
+ * DESCRIPTION: Takes a series of files or standard input and prints it to standard out.
+ *
+ * Input Parameters:
+ * 	int argc : the number of parameters passed in
+ * 	const char * argv[] : the arguments backs in as an array of pointers
+ *
+ * Return: 
+ * 	EXIT_SUCCESS : The program exits as expected
+ * 	EXIT_FAILURE : The program terminates early because of a problem
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-// program used to print contents of the file or the string passed in
-
+// Takes a series of files or standard input and prints it to standard out.
 int main(int argc, const char * argv[]) {
     
     char* usage = "usage: oucat <files>"; // usage statement

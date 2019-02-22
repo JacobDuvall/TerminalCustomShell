@@ -1,3 +1,20 @@
+/* AUTHOR: JACOB DUVALL
+ *
+ * DATE: 2/21/19
+ *
+ * PROGRAM: ouwc.c
+ *
+ * DESCRIPTION: Takes files names or standard input and returns the number of lines, words and characters in each file.
+ *
+ * Input Parameters:
+ *      int argc : the number of parameters passed in
+ *      const char * argv[] : the arguments backs in as an array of pointers
+ *
+ * Return: 
+ *      EXIT_SUCCESS : The program exits as expected
+ *      EXIT_FAILURE : The program terminates early because of a problem
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

@@ -1,3 +1,20 @@
+/* AUTHOR: JACOB DUVALL
+ *
+ * DATE: 2/21/19
+ *
+ * PROGRAM: ouecho.c
+ *
+ * DESCRIPTION: Takes text from the command line and prints it to standard out.
+ *
+ * Input Parameters:
+ *      int argc : the number of parameters passed in
+ *      const char * argv[] : the arguments backs in as an array of pointers
+ *
+ * Return: 
+ *      EXIT_SUCCESS : The program exits as expected
+ *      EXIT_FAILURE : The program terminates early because of a problem
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
