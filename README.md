@@ -1,9 +1,8 @@
-# cs3113sp19-project0
 
 # Jacob Duvall
-Project0 for OS spring '19.
 
-Project0: This project is a custom shell with various commands. The commands run as individual programs. The programs (with examples) are as follows: 
+
+Project: This project is a custom shell with various commands. The commands run as individual programs. The programs (with examples) are as follows: 
 
 oucat - Takes a series of files or standard input and prints it to standard out.
       - usage: oucat <files>
